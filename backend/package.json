@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc && ls dist",
     "prisma:generate": " prisma generate",
-    "postinstall": "npm run prisma:generate",
+    "postinstall": "npm install --include=dev && prisma generate",
     "start": "node dist/index.js"
   },
   "keywords": [],
