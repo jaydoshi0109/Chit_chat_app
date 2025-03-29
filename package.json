@@ -2,11 +2,14 @@
   "name": "pern-chat-app",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
-    "build": "tsc -p backend/tsconfig.json && echo 'Listing dist directory:' && ls backend/dist",
-     "start": "node backend/dist/index.js"
-  },
+"scripts": {
+  "build": "cd backend && tsc -p tsconfig.json && cd ..",
+  "prisma:generate": "cd backend && prisma generate",
+  "postinstall": "npm run prisma:generate",
+  "start": "node backend/dist/index.js"
+}
+
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
