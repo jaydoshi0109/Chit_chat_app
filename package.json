@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
     "build": "tsc -p backend/tsconfig.json && ls backend/dist",
-     "start": "node backend/dist/index.js"
+    "prisma:generate": "cd backend && prisma generate",
+    "postinstall": "npm run prisma:generate",
+    "start": "node backend/dist/index.js"
   },
   "keywords": [],
   "author": "",
