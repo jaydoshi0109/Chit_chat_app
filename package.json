@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
-    "build": "tsc -p backend/tsconfig.json && ls backend/dist",
-     "start": "ls -R /opt/render/project && node backend/dist/index.js"
+    "build": "tsc -p backend/tsconfig.json && echo 'Listing dist directory:' && ls backend/dist",
+     "start": "node backend/dist/index.js"
   },
   "keywords": [],
   "author": "",
