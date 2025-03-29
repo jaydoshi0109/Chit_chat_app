@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
-    "build": "mkdir -p backend/testdir && echo 'hello' > backend/testdir/testfile.txt && ls -R backend",
+    "build": "tsc -p backend/tsconfig.json && ls -al backend/dist",
     "start": "node backend/dist/index.js"
   },
   "keywords": [],
