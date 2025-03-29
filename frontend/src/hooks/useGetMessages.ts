@@ -19,6 +19,7 @@ const useGetMessages = () => {
         const response = await fetch(
           `${backendUrl}/api/messages/${selectedConversation.id}`,
           {
+            method: "GET",
             credentials: "include", // Important if using cookies for auth
           }
         );
