@@ -47,16 +47,19 @@
 
 // export { app, server, io };
 
-
+// socket.ts
 import { Server } from "socket.io";
 import http from "http";
 import { Express } from "express";
 
 const userSocketMap: { [key: string]: string } = {};
+let io: Server; // ✅ define io at module level
 
 export const getReceiverSocketId = (receiverId: string) => {
   return userSocketMap[receiverId];
 };
+
+export const getIO = () => io; // ✅ export getter for io
 
 export const createSocketServer = (app: Express) => {
   const server = http.createServer(app);
@@ -66,7 +69,7 @@ export const createSocketServer = (app: Express) => {
       ? process.env.FRONTEND_URL
       : "http://localhost:5173";
 
-  const io = new Server(server, {
+  io = new Server(server, {
     cors: {
       origin: clientOrigin,
       methods: ["GET", "POST"],
@@ -75,8 +78,6 @@ export const createSocketServer = (app: Express) => {
   });
 
   io.on("connection", (socket) => {
-    console.log("a user connected", socket.id);
-
     const userId = socket.handshake.query.userId as string;
     if (userId) {
       userSocketMap[userId] = socket.id;
