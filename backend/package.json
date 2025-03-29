@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc -p tsconfig.json && ls dist",
+   "build": "npm run clean && tsc && ls dist",
     "prisma:generate": " prisma generate",
     "postinstall": "npm run prisma:generate",
     "start": "node dist/index.js"
