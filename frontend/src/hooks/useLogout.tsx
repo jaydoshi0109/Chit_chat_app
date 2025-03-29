@@ -9,7 +9,7 @@ const useLogout = () => {
   const logout = async () => {
     try {
       setLoading(true);
-      const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
+      const backendUrl = import.meta.env.VITE_APP_BACKEND_URL;
       const response = await fetch(`${backendUrl}/api/auth/logout`, {
         method: "POST",
       });

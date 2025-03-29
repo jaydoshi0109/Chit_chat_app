@@ -35,7 +35,7 @@ export const AuthContextProvider = ({
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
+        const backendUrl = import.meta.env.VITE_APP_BACKEND_URL;
         const response = await fetch(`${backendUrl}/api/auth/me`);
         const data = await response.json();
 

@@ -34,7 +34,7 @@ const SocketContextProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (!isLoading && authUser) {
-      const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
+      const backendUrl = import.meta.env.VITE_APP_BACKEND_URL;
       const socketURL =
         import.meta.env.MODE === "development"
           ? "http://localhost:5001"
