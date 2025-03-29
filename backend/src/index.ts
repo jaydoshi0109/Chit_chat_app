@@ -3,7 +3,7 @@ import authRoutes from "./routes/auth.route";
 import messageRoutes from "./routes/message.route";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import { app, server } from "../src/socket/socket";
+import { app, server } from "./socket/socket";
 
 dotenv.config();
 
