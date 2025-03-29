@@ -13,12 +13,14 @@ const clientOrigin = process.env.NODE_ENV === 'production'
   ? process.env.FRONTEND_URL // Use an environment variable for the production frontend URL
   : "http://localhost:5173"; // Default for development
 
-const io = new Server(server, {
-  cors: {
-    origin: clientOrigin,
-    methods: ["GET", "POST"],
-  },
-});
+  const io = new Server(server, {
+    cors: {
+      origin: clientOrigin,
+      methods: ["GET", "POST"],
+      credentials: true, // Important if using cookies or auth headers
+    },
+  });
+  
 
 export const getReceiverSocketId = (receiverId: string) => {
   return userSocketMap[receiverId];
