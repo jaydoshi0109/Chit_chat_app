@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2021", // Or your preferred ECMAScript target version
+    "module": "CommonJS", // Or "ESNext" depending on your setup
+    "outDir": "./backend/dist",
+    "rootDir": "./backend/src", // Root directory of your TypeScript source files
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./backend/src/**/*.ts"],
+  "exclude": ["node_modules", "./backend/dist"]
+}
