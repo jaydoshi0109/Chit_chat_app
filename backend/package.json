@@ -6,7 +6,7 @@
     "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
     "build": "tsc -p tsconfig.json && ls dist",
     "prisma:generate": " prisma generate",
-    "postinstall": "npm run prisma:generate",
+    
     "start": "node dist/index.js"
   },
   "keywords": [],
