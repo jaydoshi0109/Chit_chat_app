@@ -21,8 +21,10 @@ const useLogin = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include", // <-- Important if you're using cookies
         body: JSON.stringify(inputs),
       });
+      
 
       const data = await res.json();
 

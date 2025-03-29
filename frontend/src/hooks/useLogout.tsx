@@ -12,7 +12,8 @@ const useLogout = () => {
       const backendUrl = import.meta.env.VITE_APP_BACKEND_URL;
       const response = await fetch(`${backendUrl}/api/auth/logout`, {
         method: "POST",
-      });
+      },
+    );
       const data = await response.json();
 
       if (!response.ok) {

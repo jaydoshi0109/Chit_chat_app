@@ -11,16 +11,20 @@ const useGetConversations = () => {
       try {
         setLoading(true);
         const backendUrl = import.meta.env.VITE_APP_BACKEND_URL;
-        const response = await fetch(`${backendUrl}/api/messages/conversations`);
+
+        const response = await fetch(`${backendUrl}/api/messages/conversations`, {
+          credentials: "include", // ✅ needed if you're using cookies
+        });
+
         const data = await response.json();
-        if (data.error) {
-          throw new Error(data.error);
+        if (!response.ok) {
+          throw new Error(data.message || "Failed to fetch conversations");
         }
 
         setConversations(data);
       } catch (error: any) {
         console.error("Error fetching conversations:", error);
-        toast.error(error.message);
+        toast.error(error.message || "Something went wrong");
       } finally {
         setLoading(false);
       }
