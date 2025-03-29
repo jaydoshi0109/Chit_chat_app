@@ -4,7 +4,7 @@
   "main": "index.js",
 "scripts": {
   "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
-  "build": "tsc -p backend/tsconfig.json", 
+  "build": "tsc -p tsconfig.json", 
   "start": "node backend/dist/index.js"
 },
   "type": "module",
