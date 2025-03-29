@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
-    "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && ls dist",
-    "prisma:generate": " prisma generate",
-    "postinstall": "npm install --include=dev && prisma generate",
-    "start": "node dist/index.js"
-  },
+  "dev": "nodemon --watch backend/src --ext ts --exec tsx backend/src/index.ts",
+  "clean": "rm -rf dist",
+  "build": "npm run clean && tsc && ls dist",
+  "prisma:generate": "prisma generate",
+  "postinstall": "prisma generate",
+  "start": "node dist/index.js"
+}
+,
   "keywords": [],
   "author": "",
   "license": "ISC",
