@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import prisma from "../db/prisma.js";
 import bcryptjs from "bcryptjs";
-import generateToken from "../utils/generateToken.js";
+import generateToken from "../utils/generateToken";
 
 declare module "express-serve-static-core" {
   interface Request {
