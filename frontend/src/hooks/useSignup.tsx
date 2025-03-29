@@ -17,7 +17,7 @@ const useSignup = () => {
   const signup = async (inputs: SignupInputs) => {
     try {
       setLoading(true);
-      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
       const res = await fetch(`${backendUrl}/api/auth/signup`, {
         method: "POST",
         headers: {

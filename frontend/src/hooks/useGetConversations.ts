@@ -10,7 +10,7 @@ const useGetConversations = () => {
     const fetchConversations = async () => {
       try {
         setLoading(true);
-        const backendUrl = process.env.REACT_APP_BACKEND_URL;
+        const backendUrl = import.meta.env.REACT_APP_BACKEND_URL;
         const response = await fetch(`${backendUrl}/api/messages/conversations`);
         const data = await response.json();
         if (data.error) {
