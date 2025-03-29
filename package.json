@@ -7,7 +7,7 @@
     "build": "tsc -p backend/tsconfig.json && ls backend/dist",
     "prisma:generate": "cd backend && prisma generate",
     "postinstall": "npm run prisma:generate",
-    "start": "node backend/dist/index.js"
+    "start": "cd backend && node dist/index.js"
   },
   "keywords": [],
   "author": "",
